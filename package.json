@@ -1,0 +1,32 @@
+{
+  "name": "action-replace-labels",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Replace labels to an issue or a pull request",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunho1017/action-replace-labels.git"
+  },
+  "keywords": [
+    "actions",
+    "github",
+    "labels"
+  ],
+  "author": "Yunho Seo",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@octokit/rest": "^21.0.2"
+  },
+  "devDependencies": {
+    "@octokit/webhooks": "^13.3.0",
+    "@types/node": "^14.0.10",
+    "tsup": "^8.3.0",
+    "typescript": "^5.4.5"
+  }
+}

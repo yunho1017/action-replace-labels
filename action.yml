@@ -1,0 +1,27 @@
+name: "Replace Labels"
+description: "Replace labels to an issue or a pull request."
+author: "Yunho Seo"
+inputs:
+  github_token:
+    description: "A GitHub token."
+    required: false
+    default: ${{ github.token }}
+  labels:
+    description: "The labels' name to be replace. Multiple labels must be separated by commas (,)."
+    required: true
+  ignore_labels:
+    description: "This is a label excluded from replacement. These labels do not remove even if they are not included in the label. Multiple labels must be separated by commas (,)."
+    required: true
+  repo:
+    description: "The owner and repository name. e.g.) Codertocat/Hello-World"
+    required: false
+    default: ${{ github.repository }}
+  number:
+    description: "The number of the issue or pull request."
+    required: false
+runs:
+  using: node12
+  main: dist/index.js
+branding:
+  icon: bookmark
+  color: green
