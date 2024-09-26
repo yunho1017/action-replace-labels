@@ -29,15 +29,17 @@ async function run(): Promise<void> {
       });
 
     const existingLabelNames = existingLabels.map((label) => label.name);
-
+    console.log("labels:", [
+      ...labels,
+      ...existingLabelNames.filter((label) => ignoreLabels.includes(label)),
+    ]);
     await octokit.rest.issues.setLabels({
       owner,
       repo,
       issue_number: number,
-      name: [
-        ...labels,
-        ...existingLabelNames.filter((label) => ignoreLabels.includes(label)),
-      ],
+      labels: labels.concat(
+        existingLabelNames.filter((label) => ignoreLabels.includes(label))
+      ),
     });
   } catch (e) {
     if (e instanceof Error) {
