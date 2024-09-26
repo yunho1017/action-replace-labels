@@ -5,7 +5,7 @@
   "description": "Replace labels to an issue or a pull request",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
